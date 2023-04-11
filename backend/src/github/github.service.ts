@@ -1,13 +1,14 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Octokit } from '@octokit/rest';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class GithubService {
   private readonly octokit: Octokit;
-  
-  constructor() {
+
+  constructor(private readonly configService: ConfigService) {
     this.octokit = new Octokit({
-      auth: `token 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`,
+      auth: `token ${this.configService.get<string>('GITHUB_PAT')}`,
     });
   }
   

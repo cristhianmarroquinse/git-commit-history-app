@@ -4,9 +4,9 @@ import { AppService } from './app.service';
 import { GithubController } from './github/github.controller';
 import { GithubService } from './github/github.service';
 import { GithubModule } from './github/github.module';
-
+import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [GithubModule],
+  imports: [GithubModule, ConfigModule.forRoot({isGlobal: true})],
   controllers: [AppController, GithubController],
   providers: [AppService, GithubService],
 })
