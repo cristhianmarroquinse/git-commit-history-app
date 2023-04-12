@@ -16,6 +16,8 @@ https://github.com/cristhianmarroquinse/git-commit-history-app.git
 GITHUB_PAT=git_hub_personal_access_token
 ```
 
+**This github personal access token can't be uploaded to github for security reasons, if you need this key you will need to ask for it from the owner of the project**
+
 3. **Starting the backend:** Once you have installed the dependencies and you are inside the **`/backend`** folder you must run the command **`npm run start:dev`**, this command will start the backend in port **3001**, you can check this going to http://localhost:3001/ and you must see "Hello World!" message from NestJS.
 
 4. **Setting up frontend:** In the project root you will find the **`/frontend`** folder, you need to navigate inside this folder using **`cd frontend`** command and then run the command **`npm i`** this will start the installation of all the packages needed for the frontend.  After that, you will need to create the **`.env`** file in the **`/frontend`** folder:
