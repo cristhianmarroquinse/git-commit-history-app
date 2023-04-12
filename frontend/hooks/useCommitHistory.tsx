@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Commit from '../interfaces/Commit';
+import Commit from '@/interfaces/Commit';
 
 interface UseCommitHistoryProps {
   owner: string;
@@ -21,7 +21,7 @@ export const useCommitHistory = ({ owner, repo }: UseCommitHistoryProps): UseCom
     const fetchCommits = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/repositories/${owner}/${repo}/commits`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ENDPOINT}/repositories/${owner}/${repo}/commits`);
         const data = await response.json();
         setCommits(data);
       } catch (error) {
